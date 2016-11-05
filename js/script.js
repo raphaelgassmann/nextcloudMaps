@@ -104,11 +104,17 @@ function debounce(func, wait, immediate) {
 
 		var attribution = '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>';
 
-		var mapQuest = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
-			attribution : attribution,
-			subdomains : "1234"
-		})
-		/*	var mapbox = L.tileLayer('https://a.tiles.mapbox.com/v3/liedman.h9ekn0f1/{z}/{x}/{y}.png', {
+
+		//var mapQuest = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+		var mapQuest = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmFwaGFlbGdhc3NtYW5uIiwiYSI6ImNpdjU5bzNqdjAwMGYydGw3YXU1d3NvM2QifQ.FiMnB41pbfLzZSZVNoHS6Q', {
+
+		//var mapQuest = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+			//attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,
+			attribution : attribution
+			//subdomains : "1234"
+		});
+/*
+		var mapbox = L.tileLayer('https://a.tiles.mapbox.com/v3/liedman.h9ekn0f1/{z}/{x}/{y}.png', {
 		 attribution : attribution + ' Tiles <a href="https://www.mapbox.com/about/maps/">MapBox</a>'
 		 })
 		 var blackAndWhite = L.tileLayer('http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png', {
@@ -118,7 +124,9 @@ function debounce(func, wait, immediate) {
 		 var airial = L.tileLayer('http://server.arcgisonline.com/ArcGIS/' + 'rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 		 attribution : attribution + ' Tiles © Esri',
 		 subdomains : "1234"
-		 })*/
+		 });
+		/*
+			 */
 
 		/*var clouds = L.tileLayer('http://{s}.tile.openweathermap.org/map/clouds/{z}/{x}/{y}.png', {
 		 attribution : 'Map data &copy; <a href="http://openweathermap.org">OpenWeatherMap</a>',
